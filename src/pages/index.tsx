@@ -1,6 +1,7 @@
 import { Text, Title } from "@mantine/core";
 import type { NextPage } from "next";
 import Head from "next/head";
+import { Hero } from "../components/Hero";
 import NavHeader from "../components/NavHeader";
 
 const navLinks = {
@@ -32,11 +33,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <NavHeader links={navLinks.links} />
-      <div>
-        <Title align="center" order={1}>
-          Hello World
-        </Title>
-      </div>
+      <Hero />
     </div>
   );
 };
