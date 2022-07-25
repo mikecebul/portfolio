@@ -11,6 +11,7 @@ import {
   MediaQuery,
   CSSObject,
   Box,
+  Title,
 } from "@mantine/core";
 import { useBooleanToggle } from "@mantine/hooks";
 import Link from "next/link";
@@ -150,9 +151,9 @@ export default function NavHeader({ links }: NavHeaderProps) {
   ));
 
   return (
-    <Header height={HEADER_HEIGHT} mb={120} className={classes.root}>
+    <Header height={HEADER_HEIGHT} mb={30} className={classes.root}>
       <Container className={classes.header}>
-        <Text size="lg">MikeCebul</Text>
+        <Title order={2}>MikeCebul</Title>
         <Group spacing={5} className={classes.links}>
           {items}
         </Group>
