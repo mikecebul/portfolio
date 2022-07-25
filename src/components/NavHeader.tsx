@@ -8,9 +8,13 @@ import {
   Paper,
   Transition,
   Text,
+  MediaQuery,
+  CSSObject,
+  Box,
 } from "@mantine/core";
 import { useBooleanToggle } from "@mantine/hooks";
 import Link from "next/link";
+import DarkModeToggler from "./DarkModeToggler";
 
 const HEADER_HEIGHT = 60;
 
@@ -93,11 +97,15 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-interface HeaderResponsiveProps {
+const hidden: CSSObject = {
+  display: "none",
+};
+
+interface NavHeaderProps {
   links: { link: string; label: string }[];
 }
 
-const navLinks: HeaderResponsiveProps = {
+const navLinks: NavHeaderProps = {
   links: [
     {
       link: "/about",
@@ -118,7 +126,7 @@ const navLinks: HeaderResponsiveProps = {
   ],
 };
 
-export function HeaderResponsive({ links }: HeaderResponsiveProps) {
+export default function NavHeader({ links }: NavHeaderProps) {
   const [opened, toggleOpened] = useBooleanToggle(false);
   const [active, setActive] = useState(links[0].link);
   const { classes, cx } = useStyles();
@@ -148,6 +156,11 @@ export function HeaderResponsive({ links }: HeaderResponsiveProps) {
         <Group spacing={5} className={classes.links}>
           {items}
         </Group>
+        <MediaQuery smallerThan="md" styles={{ display: "none" }}>
+          <Box>
+            <DarkModeToggler />
+          </Box>
+        </MediaQuery>
 
         <Burger
           opened={opened}
@@ -160,6 +173,7 @@ export function HeaderResponsive({ links }: HeaderResponsiveProps) {
           {(styles) => (
             <Paper className={classes.dropdown} withBorder style={styles}>
               {items}
+              <DarkModeToggler />
             </Paper>
           )}
         </Transition>

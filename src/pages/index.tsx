@@ -1,25 +1,25 @@
 import { Text, Title } from "@mantine/core";
 import type { NextPage } from "next";
 import Head from "next/head";
-import { HeaderResponsive } from "../components/Header";
+import NavHeader from "../components/NavHeader";
 
 const navLinks = {
   links: [
     {
-      link: "/about",
-      label: "Features",
+      link: "/",
+      label: "Home",
     },
     {
-      link: "/pricing",
-      label: "Pricing",
+      link: "/projects",
+      label: "Projects",
     },
     {
-      link: "/learn",
-      label: "Learn",
+      link: "/contact",
+      label: "Contact",
     },
     {
-      link: "/community",
-      label: "Community",
+      link: "/resume",
+      label: "Résumé",
     },
   ],
 };
@@ -31,7 +31,7 @@ const Home: NextPage = () => {
         <meta name="description" content="Portfolio for Mike Cebulski" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <HeaderResponsive links={navLinks.links} />
+      <NavHeader links={navLinks.links} />
       <div>
         <Title align="center" order={1}>
           Hello World
