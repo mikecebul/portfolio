@@ -16,7 +16,8 @@ import coder from "../public/images/coder.svg";
 const useStyles = createStyles((theme) => ({
   inner: {
     display: "flex",
-    justifyContent: "space-between",
+    justifyContent: [theme.breakpoints.md] ? "center" : "space-between",
+
     paddingTop: theme.spacing.xl * 4,
     paddingBottom: theme.spacing.xl * 4,
   },
@@ -34,13 +35,17 @@ const useStyles = createStyles((theme) => ({
   title: {
     color: theme.colorScheme === "dark" ? theme.white : theme.black,
     fontFamily: `Greycliff CF, ${theme.fontFamily}`,
-    fontSize: 44,
+    fontSize: 30,
     lineHeight: 1.2,
     fontWeight: 900,
 
     [theme.fn.smallerThan("xs")]: {
       fontSize: 28,
     },
+  },
+
+  desc: {
+    maxWidth: [theme.fn.smallerThan("lg")] ? 480 : "100%",
   },
 
   control: {
@@ -51,6 +56,7 @@ const useStyles = createStyles((theme) => ({
 
   image: {
     flex: 1,
+    marginTop: theme.spacing.xl * 1.5,
 
     [theme.fn.smallerThan("md")]: {
       display: "none",
@@ -59,6 +65,7 @@ const useStyles = createStyles((theme) => ({
 
   highlight: {
     position: "relative",
+    display: "inline-block",
     backgroundColor:
       theme.colorScheme === "dark"
         ? theme.fn.rgba(theme.colors[theme.primaryColor][6], 0.55)
@@ -76,13 +83,13 @@ export function Hero() {
         <div className={classes.inner}>
           <div className={classes.content}>
             <Title className={classes.title}>
-              A <span className={classes.highlight}>modern</span> React <br />{" "}
-              components library
+              <span>Hi, I&apos;m</span>{" "}
+              <span className={classes.highlight}>Mike Cebulski</span>
             </Title>
-            <Text color="dimmed" mt="md">
-              Build fully functional accessible web applications faster than
-              ever – Mantine includes more than 120 customizable components and
-              hooks to cover you in any situation
+            <Text color="dimmed" mt="md" className={classes.desc}>
+              I&apos;m a web developer based in Northern Michigan. I&apos;m
+              currently working at BASES Recovery Center and a student at North
+              Central Michigan College.
             </Text>
 
             <List
@@ -96,30 +103,19 @@ export function Hero() {
               }
             >
               <List.Item>
-                <b>TypeScript based</b> – build type safe applications, all
-                components and hooks export types
+                <b>Front-end Development</b> – HTML, CSS, JavaScript, React
               </List.Item>
               <List.Item>
-                <b>Free and open source</b> – all packages have MIT license, you
-                can use Mantine in any project
+                <b>Back-end Development</b> – Express, Node, SQL, Prisma
               </List.Item>
               <List.Item>
-                <b>No annoying focus ring</b> – focus ring will appear only when
-                user navigates with keyboard
+                <b>Unix Admininstration</b> – Bash, NGINX, Git, Docker
               </List.Item>
             </List>
 
             <Group mt={30}>
               <Button radius="xl" size="md" className={classes.control}>
-                Get started
-              </Button>
-              <Button
-                variant="default"
-                radius="xl"
-                size="md"
-                className={classes.control}
-              >
-                Source code
+                See my work
               </Button>
             </Group>
           </div>

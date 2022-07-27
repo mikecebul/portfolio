@@ -23,6 +23,9 @@ const useStyles = createStyles((theme) => ({
   root: {
     position: "relative",
     zIndex: 1,
+    [theme.fn.largerThan("sm")]: {
+      marginBottom: theme.spacing.xl * 2,
+    },
   },
 
   dropdown: {
@@ -46,6 +49,10 @@ const useStyles = createStyles((theme) => ({
     justifyContent: "space-between",
     alignItems: "center",
     height: "100%",
+  },
+
+  title: {
+    fontSize: theme.fontSizes.xl,
   },
 
   links: {
@@ -151,9 +158,11 @@ export default function NavHeader({ links }: NavHeaderProps) {
   ));
 
   return (
-    <Header height={HEADER_HEIGHT} mb={30} className={classes.root}>
+    <Header height={HEADER_HEIGHT} className={classes.root}>
       <Container className={classes.header}>
-        <Title order={2}>MikeCebul</Title>
+        <Title order={2} className={classes.title}>
+          MikeCebul
+        </Title>
         <Group spacing={5} className={classes.links}>
           {items}
         </Group>
