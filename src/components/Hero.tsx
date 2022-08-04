@@ -88,7 +88,7 @@ export function Hero() {
             </Title>
             <Text color="dimmed" mt="md" className={classes.desc}>
               I&apos;m a web developer based in Northern Michigan. I&apos;m
-              currently working at BASES Recovery Center and a student at North
+              currently working at BASES Recovery Center and studying at North
               Central Michigan College.
             </Text>
 
