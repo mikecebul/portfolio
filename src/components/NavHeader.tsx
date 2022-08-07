@@ -13,7 +13,7 @@ import {
   Box,
   Title,
 } from "@mantine/core";
-import { useBooleanToggle } from "@mantine/hooks";
+import { useDisclosure } from "@mantine/hooks";
 import Link from "next/link";
 import DarkModeToggler from "./DarkModeToggler";
 
@@ -135,7 +135,7 @@ const navLinks: NavHeaderProps = {
 };
 
 export default function NavHeader({ links }: NavHeaderProps) {
-  const [opened, toggleOpened] = useBooleanToggle(false);
+  const [opened, { toggle, close }] = useDisclosure(false);
   const [active, setActive] = useState(links[0].link);
   const { classes, cx } = useStyles();
 
@@ -149,7 +149,7 @@ export default function NavHeader({ links }: NavHeaderProps) {
         onClick={(event) => {
           event.preventDefault();
           setActive(link.link);
-          toggleOpened(false);
+          close();
         }}
       >
         {link.label}
@@ -160,7 +160,7 @@ export default function NavHeader({ links }: NavHeaderProps) {
   return (
     <Header height={HEADER_HEIGHT} className={classes.root}>
       <Container className={classes.header}>
-        <Title order={2} className={classes.title}>
+        <Title order={1} className={classes.title}>
           MikeCebul
         </Title>
         <Group spacing={5} className={classes.links}>
@@ -174,7 +174,7 @@ export default function NavHeader({ links }: NavHeaderProps) {
 
         <Burger
           opened={opened}
-          onClick={() => toggleOpened()}
+          onClick={toggle}
           className={classes.burger}
           size="sm"
         />
