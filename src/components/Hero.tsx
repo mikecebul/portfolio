@@ -10,7 +10,7 @@ import {
   List,
   ThemeIcon,
 } from "@mantine/core";
-import { Check } from "tabler-icons-react";
+import { IconCheck } from "@tabler/icons";
 import coder from "../public/images/coder.svg";
 
 const useStyles = createStyles((theme) => ({
@@ -98,7 +98,7 @@ export function Hero() {
               size="sm"
               icon={
                 <ThemeIcon size={20} radius="xl">
-                  <Check size={12} />
+                  <IconCheck size={12} stroke={1.5} />
                 </ThemeIcon>
               }
             >
