@@ -6,13 +6,13 @@ This portfolio was created with Typescript, Nextjs, and Mantine. It's my go-to s
 
 ## Todos
 
-- [] Document projects
-  - [] Add 1 - 3 projects on index page
-  - [] create and link to project page
-- [] Create contact form
-- [] Create CV
-- [] Create Footer
-  - [] Add social links
+- [ ] Document projects
+  - [ ] Add 1 - 3 projects on index page
+  - [ ] create and link to project page
+- [ ] Create contact form
+- [ ] Create CV
+- [ ] Create Footer
+  - [ ] Add social links
 
 ## Getting Started
 
