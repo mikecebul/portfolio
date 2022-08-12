@@ -103,10 +103,11 @@ export function Hero() {
               }
             >
               <List.Item>
-                <b>Front-end Development</b> – HTML, CSS, JavaScript, React
+                <b>Front-end Development</b> – Typescript, React, CSS-in-JS,
+                Tailwind
               </List.Item>
               <List.Item>
-                <b>Back-end Development</b> – Express, Node, SQL, Prisma
+                <b>Back-end Development</b> – Nextjs, Node, SQL, Prisma
               </List.Item>
               <List.Item>
                 <b>Unix Admininstration</b> – Bash, NGINX, Git, Docker
