@@ -8,6 +8,7 @@ This portfolio was created with Typescript, Nextjs, and Mantine. It's my go-to s
 
 [] Document projects
 [] Create contact form
+[] Create CV
 [] Create Footer
 
 ## Getting Started
