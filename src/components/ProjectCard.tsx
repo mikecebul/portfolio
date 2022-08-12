@@ -36,7 +36,7 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-interface BadgeCardProps {
+interface ProjectCardProps {
   image: string;
   title: string;
   country: string;
@@ -47,13 +47,13 @@ interface BadgeCardProps {
   }[];
 }
 
-export function BadgeCard({
+export default function ProjectCard({
   image,
   title,
   description,
   country,
   badges,
-}: BadgeCardProps) {
+}: ProjectCardProps) {
   const { classes, theme } = useStyles();
 
   const features = badges.map((badge) => (

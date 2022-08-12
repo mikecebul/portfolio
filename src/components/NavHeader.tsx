@@ -7,7 +7,6 @@ import {
   Burger,
   Paper,
   Transition,
-  Text,
   MediaQuery,
   CSSObject,
   Box,
@@ -113,33 +112,11 @@ interface NavHeaderProps {
   links: { link: string; label: string }[];
 }
 
-const navLinks: NavHeaderProps = {
-  links: [
-    {
-      link: "/about",
-      label: "Features",
-    },
-    {
-      link: "/pricing",
-      label: "Pricing",
-    },
-    {
-      link: "/learn",
-      label: "Learn",
-    },
-    {
-      link: "/community",
-      label: "Community",
-    },
-  ],
-};
-
 export default function NavHeader({ links }: NavHeaderProps) {
   const [opened, { toggle, close }] = useDisclosure(false);
   const [active, setActive] = useState(links[0].link);
   const { classes, cx } = useStyles();
 
-  console.log(links);
   const items = links.map((link) => (
     <Link href={link.link} passHref key={link.label}>
       <a
