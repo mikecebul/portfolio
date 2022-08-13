@@ -103,7 +103,7 @@ export default function Hero() {
               }
             >
               <List.Item>
-                <b>Front-end Development</b> – Typescript, React, CSS-in-JS,
+                <b>Front-end Development</b> – TypeScript, React, CSS-in-JS,
                 Tailwind
               </List.Item>
               <List.Item>
