@@ -1,3 +1,4 @@
+import { Group } from "@mantine/core";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Hero from "../components/Hero";
@@ -27,6 +28,7 @@ const navLinks = {
 };
 const Home: NextPage = () => {
   // Add react query?
+  console.log(projectData);
   return (
     <>
       <Head>
@@ -36,25 +38,20 @@ const Home: NextPage = () => {
       </Head>
       <NavHeader links={navLinks.links} />
       <Hero />
-      {/* {projectData?.map((project, index) => {
-        <div key={index}>
-          <ProjectCard
-            image={project.image}
-            title={project.title}
-            description={project.description}
-            country={project.country}
-            badges={project.badges}
-          />
-        </div>;
-      })}
-      <ProjectCard
-        image={projectData[0].image}
-        title={projectData[0].title}
-        description={projectData[0].description}
-        country={projectData[0].country}
-        badges={projectData[0].badges}
-      />
-      <h3>Hello Word</h3> */}
+      {/* <Group position="center" spacing="xl">
+        {projectData?.map((project, index) => {
+          return (
+            <ProjectCard
+              key={index}
+              image={project.image}
+              title={project.title}
+              description={project.description}
+              country={project.country}
+              badges={project.badges}
+            />
+          );
+        })}
+      </Group> */}
     </>
   );
 };
