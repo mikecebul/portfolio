@@ -109,7 +109,7 @@ const hidden: CSSObject = {
 };
 
 interface NavHeaderProps {
-  links: { link: string; label: string }[];
+  links: { link: string; label: string, external: boolean }[];
 }
 
 export default function NavHeader({ links }: NavHeaderProps) {
@@ -124,10 +124,11 @@ export default function NavHeader({ links }: NavHeaderProps) {
           [classes.linkActive]: active === link.link,
         })}
         onClick={(event) => {
-          event.preventDefault();
-          setActive(link.link);
-          close();
+          // event.preventDefault();
+          // setActive(link.link);
+          close();        
         }}
+        target={link.external ? "_blank" : "_self" }
       >
         {link.label}
       </a>

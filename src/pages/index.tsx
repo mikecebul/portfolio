@@ -3,7 +3,6 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Hero from "../components/Hero";
 import NavHeader from "../components/NavHeader";
-import ProjectCard from "../components/ProjectCard";
 import projectData from "../data/projectData";
 
 const navLinks = {
@@ -11,18 +10,22 @@ const navLinks = {
     {
       link: "/",
       label: "Home",
+      external: false,
     },
+    // {
+    //   link: "/projects",
+    //   label: "Projects",
+    //   external: false,
+    // },
+    // {
+    //   link: "/contact",
+    //   label: "Contact",
+    //   external: false,
+    // },
     {
-      link: "/projects",
-      label: "Projects",
-    },
-    {
-      link: "/contact",
-      label: "Contact",
-    },
-    {
-      link: "/resume",
-      label: "Résumé",
+      link: "https://mikecebul.github.io/online-cv/",
+      label: "CV",
+      external: true,
     },
   ],
 };

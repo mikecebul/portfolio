@@ -12,6 +12,7 @@ import {
 } from "@mantine/core";
 import { IconCheck } from "@tabler/icons";
 import coder from "../public/images/coder.svg";
+import Link from "next/link";
 
 const useStyles = createStyles((theme) => ({
   inner: {
@@ -115,9 +116,17 @@ export default function Hero() {
             </List>
 
             <Group mt={30}>
-              <Button radius="xl" size="md" className={classes.control}>
-                See my work
-              </Button>
+              <Link href="https://github.com/mikecebul" passHref>
+                <Button
+                  component="a"
+                  target="_blank"
+                  radius="xl"
+                  size="md"
+                  className={classes.control}
+                >
+                  See my work
+                </Button>
+              </Link>
             </Group>
           </div>
           <Image src={coder.src} className={classes.image} alt="Me Coding" />
